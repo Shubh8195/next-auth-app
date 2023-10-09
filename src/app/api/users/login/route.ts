@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
       success: true,
     });
 
-    response.cookies.set("token", token, { httpOnly: true, path: "/" });
+    response.cookies.set("token", token, { httpOnly: true, path: "/", domain: "next-auth-app-mongo.vercel.app" });
 
     return response;
   } catch (error: any) {
